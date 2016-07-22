@@ -1,17 +1,19 @@
 package com.niit.ecartbackend.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table
+@Table(name= "Supplier")
 @Component
 public class Supplier {
 	private String id;
 	private String name;
 	private String address;
+   @Id
 	public String getId() {
 		return id;
 	}
@@ -30,5 +32,4 @@ public class Supplier {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
 }

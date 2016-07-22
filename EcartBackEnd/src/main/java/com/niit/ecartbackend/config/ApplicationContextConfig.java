@@ -16,7 +16,9 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.ecartbackend.model.Category;
+import com.niit.ecartbackend.model.Product;
 import com.niit.ecartbackend.model.Supplier;
+import com.niit.ecartbackend.model.User;
 
 @Configuration
 @ComponentScan("com.niit.ecartbackend")
@@ -48,6 +50,9 @@ public class ApplicationContextConfig {
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(datasource);
 		sessionBuilder.addProperties(getHibernateProperties());
 		sessionBuilder.addAnnotatedClass(Category.class);
+		sessionBuilder.addAnnotatedClass(Supplier.class);
+		sessionBuilder.addAnnotatedClass(Product.class);
+		sessionBuilder.addAnnotatedClass(User.class);
 		return sessionBuilder.buildSessionFactory();
 	}
 @Autowired
