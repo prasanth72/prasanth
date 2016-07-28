@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.ecartbackend.model.User;
+import com.niit.ecartbackend.model.UserDetails;
 
 @Repository("userDAO")
 public class UserDAOImpl implements UserDAO {
@@ -54,4 +55,16 @@ public class UserDAOImpl implements UserDAO {
 		return listUser;
 	}
 
+	@Transactional
+	public boolean isValidUser(String name,String password){
+		String hql = "from UserDetails where id = '"+name+"' and "+"password";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<UserDetails> list = (List<UserDetails>) query.getResultList();
+		if(list != null ||!list.isEmpty()){
+		
+		return true;
+		}
+			return false;
+	}    
+				
 }
