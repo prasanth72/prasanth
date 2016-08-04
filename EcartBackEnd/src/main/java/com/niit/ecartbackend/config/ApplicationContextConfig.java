@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
+import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.ecartbackend.model.Category;
@@ -30,7 +30,7 @@ public class ApplicationContextConfig {
 	public DataSource getH2DataSource() {
 		DriverManagerDataSource datasource = new DriverManagerDataSource();
 		datasource.setDriverClassName("org.h2.Driver");
-		datasource.setUrl("jdbc:h2:tcp://localhost/~/Test");
+		datasource.setUrl("jdbc:h2:tcp://localhost/~/test");
 
 		datasource.setUsername("sa");
 		datasource.setPassword("sa");

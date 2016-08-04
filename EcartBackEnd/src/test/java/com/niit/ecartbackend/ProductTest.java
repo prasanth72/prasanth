@@ -13,10 +13,10 @@ public class ProductTest {
 		context.refresh();
 	ProductDAO productDAO = (ProductDAO)context.getBean("productDAO");
 		Product product = (Product)context.getBean("product");
-		product.setId("CG120");
+		product.setId("CG12");
 		product.setName("CGname120");
 		product.setDescription("CGdescription120");
-		product.setPrice(125555);
+		product.setPrice("125555");
 		
 		productDAO.saveOrUpdate(product);
 	}

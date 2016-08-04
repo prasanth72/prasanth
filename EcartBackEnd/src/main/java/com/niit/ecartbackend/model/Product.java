@@ -7,14 +7,13 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name = "Product")
+@Table(name = "product")
 @Component
 public class Product {
 	private String id;
 	private String name;
 	private String description;
-	private double price;
-	
+	private String price;
 	@Id
 	public String getId() {
 		return id;
@@ -34,10 +33,14 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public double getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(int i) {
-		this.price = i;
+	public void setPrice(String price) {
+		this.price = price;
 	}
+	
+	
+	
+	
 }
