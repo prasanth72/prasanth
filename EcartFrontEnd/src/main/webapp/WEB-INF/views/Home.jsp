@@ -59,7 +59,7 @@
       <li><a href="#">View All</a></li>
       <li><a href="#">Admin</a></li>
       <li><a href="register">Register</a></li>
-       <li><a href="#">Contact us</a></li>
+       <li><a href="addwatch">Add Product</a></li>
       <li><a href="login">Login</a></li>
      </ul>
   </div>
@@ -133,7 +133,7 @@
     </div>
     <div class="col-sm-4">
       <a href="enter pro?data=table">
-           <img src="<c:url value="/resources/images/7.jpg"/>" alt="Cinque Terre" style="width:300px;height:150px">
+           <img src="<c:url value="/resources/images/3.jpg"/>" alt="Cinque Terre" style="width:300px;height:150px">
             <a href="search?pro=chair" >KITCHEN INTERIOR</a>
       </a>
     </div>
