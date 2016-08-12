@@ -20,6 +20,18 @@
 	    <servlet-name>dispatcher</servlet-name>  
 	    <url-pattern>/</url-pattern>  
 	</servlet-mapping> 	
+	<!-- file : web.xml -->
+<context-param>
+	<param-name>contextConfigLocation</param-name>
+	<param-value>/WEB-INF/Spring/applicationContext.xml</param-value>
+ </context-param>
+
+ <listener>
+   <listener-class>
+         org.springframework.web.context.ContextLoaderListener
+   </listener-class>
+ </listener>
+	
 	<welcome-file-list>
 <welcome-file>
 Home.jsp
