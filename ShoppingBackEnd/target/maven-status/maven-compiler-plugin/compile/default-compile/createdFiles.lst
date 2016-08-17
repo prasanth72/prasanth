@@ -1,0 +1,15 @@
+com\niit\shoppingbackendmodel\Category.class
+com\niit\shoppingbackendmodel\UserDetails.class
+com\niit\shoppingbackendDAO\CategoryDAO.class
+com\niit\shoppingbackendDAO\CategoryDAOImpl.class
+com\niit\shoppingbackendDAO\ProductDAO.class
+com\niit\shoppingbackendmodel\Product.class
+com\niit\shoppingbackend\ApplicationContextConfig.class
+com\niit\shoppingbackendmodel\Supplier.class
+com\niit\shoppingbackendDAO\UserDAOImpl.class
+com\niit\shoppingbackendDAO\ProductDAOImpl.class
+com\niit\shoppingbackend\App.class
+com\niit\shoppingbackendDAO\SupplierDAO.class
+com\niit\shoppingbackendDAO\SupplierDAOImpl.class
+com\niit\shoppingbackendmodel\User.class
+com\niit\shoppingbackendDAO\UserDAO.class
