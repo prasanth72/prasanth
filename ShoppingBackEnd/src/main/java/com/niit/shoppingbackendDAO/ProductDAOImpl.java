@@ -53,6 +53,27 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 		
 @Transactional
+public List geAllProducts(){
+	//TODO Auto-generated method stub
+Session session =sessionFactory.openSession();
+List list=session.createQuery("from Product").list();
+	return list;
+}
+
+@Transactional
+public int deleteproduct(int id) {
+	// TODO Auto-generated method stub
+	Session session=sessionFactory.openSession();
+	org.hibernate.Transaction tx=session.beginTransaction();
+	Product product=(Product)session.load(Product.class, id);
+	session.delete(product);
+	tx.commit();
+	
+	session.close();
+	return id;
+	}
+
+@Transactional
 public List<Product> list1() {
 	/*@SuppressWarnings("unchecked")
 	List<Product> listProduct =(List<Product>)
@@ -63,6 +84,16 @@ Session session=sessionFactory.openSession();
 List<Product> list=session.createQuery("from Product").list();
 session.close();
 return list;
+}
+@Override
+public int deleteProduct(int id) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+@Override
+public List getAllProducts() {
+	// TODO Auto-generated method stub
+	return null;
 }
 	
 
