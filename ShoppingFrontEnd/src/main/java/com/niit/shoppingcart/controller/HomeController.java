@@ -180,28 +180,33 @@ public class HomeController
 		    	return new ModelAndView("ViewProduct","product",product);
 		    	//return new ModelAndView("ViewProduct");
 		    }
-
+@RequestMapping("editproduct")
+public ModelAndView display5()
+{
+	ModelAndView m6 = new ModelAndView("editproduct");
+	return m6;
+}
 @RequestMapping(value="editproduct",method=RequestMethod.GET)
 public ModelAndView editproduct(@RequestParam int id){
  System.out.println("hello niit.........................niit1............");	
- Product product=pd.getSingleProduct(id);
+ Product product1=pd.get(id);
  System.out.println("hello niit.........................niit2............");
- System.out.println("eeee "+product.getProductName());
-	return new ModelAndView("editproduct","product",product);
+ System.out.println("eeee" +product1.getName());
+	return new ModelAndView("editproduct","Product",product1);
 }
-@RequestMapping(value="/update",method=RequestMethod.POST)
-public ModelAndView updateWatch(HttpServletRequest request,@Valid @ModelAttribute("watch")Watch watch,BindingResult result)
+@RequestMapping(value="/editproduct",method=RequestMethod.POST)
+public ModelAndView updateProduct(HttpServletRequest request,@Valid @ModelAttribute("product")Product product,BindingResult result)
 {
 	
-	String filename=watch.getImg().getOriginalFilename();
+	String filename=product.getImg().getOriginalFilename();
 	
-	watch.setImage(filename);
+	product.setImage(filename);
 	
 	try{
-		byte[] bytes=new byte[watch.getImg().getInputStream().available()];
-		watch.getImg().getInputStream().read(bytes);
-		BufferedInputStream buffer=new BufferedInputStream(watch.getImg().getInputStream());
-		MultipartFile file=watch.getImg();
+		byte[] bytes=new byte[product.getImg().getInputStream().available()];
+		product.getImg().getInputStream().read(bytes);
+		BufferedInputStream buffer=new BufferedInputStream(product.getImg().getInputStream());
+		MultipartFile file=product.getImg();
 		String path=request.getServletContext().getRealPath("/")+"resources/images";
 		File rootPath=new File(path);
 		if(!rootPath.exists())
@@ -215,8 +220,17 @@ public ModelAndView updateWatch(HttpServletRequest request,@Valid @ModelAttribut
 		System.out.println(e.getMessage());
 	}
 		        
-	pd.updateWatch(watch);
+	pd.saveOrUpdate(product);
 	return new ModelAndView("retrive");
+}
+
+@RequestMapping("/delete")
+public ModelAndView deleteProduct(@RequestParam int id)
+{
+	 System.out.println("hello welcome to niit");
+	    pd.deleteProduct(id);
+	ModelAndView model=new ModelAndView("retrieve");
+	return model;
 }
 	
 }

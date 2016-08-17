@@ -26,31 +26,28 @@
   </div>
 </nav>
 <!--<c:url var="storeproduct" value="saveproduct"/>-->
-  <form:form id="st1" modelAttribute="product" method="post" action="update" enctype="multipart/form-data">
-    <form:hidden style="visibility:hidden" path="productId" value="${product.productId}" />
-      <tr><td><form:label path="productName">product Name :</form:label></td>
-               <td><form:input path="productName" value="${product.productName}"/></td>
+  <form:form id="st1" modelAttribute="Product" method="post" action="update" enctype="multipart/form-data">
+    <form:hidden style="visibility:hidden" path="id" value="${product.id}" />
+      <tr><td><form:label path="name">product Name :</form:label></td>
+               <td><form:input path="name" value="${product.name}"/></td>
            </tr>
-               <tr><td><form:label path="productPrice">product Price :</form:label></td>
-               <td><form:input path="productPrice" value="${product.productPrice}"/></td>
+               <tr><td><form:label path="price">product Price :</form:label></td>
+               <td><form:input path="price" value="${product.price}"/></td>
            </tr>
-           <tr><td><form:label path="productDescription">Description :</form:label></td>
-               <td><form:input path="productDescription" value="${product.productDescription}"/></td>
+           <tr><td><form:label path="description">Description :</form:label></td>
+               <td><form:input path="description" value="${product.description}"/></td>
            </tr>
            
-           <tr><td><form:label path="productStyle">Style :</form:label></td>
-               <td><form:input path="productStyle" value="${product.productStyle}"/></td>
+           <tr><td><form:label path="style">Style :</form:label></td>
+               <td><form:input path="style" value="${product.style}"/></td>
            </tr>
                <tr><td><form:label path="warranty">Warranty :</form:label></td>
                <td><form:input path="warranty" value="${product.warranty}"/></td>
            </tr>
-           <tr><td><form:label path="primaryMaterial">Primary Material :</form:label></td>
-               <td><form:input path="primaryMaterial" value="${product.PrimaryMaterial}"/></td>
+           <tr><td><form:label path="primarymaterial">Primary Material :</form:label></td>
+               <td><form:input path="primarymaterial" value="${product.PrimaryMaterial}"/></td>
            </tr>
-           </tr>
-               <tr><td><form:label path="capacity">Capacity :</form:label></td>
-               <td><form:input path="capacity" value="${product.capacity}"/></td>
-           </tr>           
+                     
            <tr><td><form:label path="img">product Image :</form:label></td>
                <td><form:input path="img" type="file" />
                <font color="red"><form:errors path="img"></form:errors></font></td><tr>
