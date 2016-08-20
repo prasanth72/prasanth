@@ -49,7 +49,7 @@ public class Register {
 	private String mobile;
 		
 	@Column(name = "status")
-	private boolean  status=false;
+	private boolean  status=true;
 
 	public int getId() {
 		return id;

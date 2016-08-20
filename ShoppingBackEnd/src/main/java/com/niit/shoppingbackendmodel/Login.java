@@ -14,9 +14,16 @@ public class Login {
 	@Id
 	@Column(name="id")
 	private int id;
+	private String name;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	private String password;
-	private String role="ROLE_USER";
-	private boolean status=false;
+	private String role="ROLE_ADMIN";
+	private boolean status=true;
 	public int getId() {
 		return id;
 	}
