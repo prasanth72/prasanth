@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import com.niit.shoppingbackendmodel.Product;
+import com.niit.shoppingbackendmodel.Register;
 
 public interface ProductDAO {
 	public List<Product> list();

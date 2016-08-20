@@ -24,13 +24,13 @@ import com.niit.shoppingbackendDAO.ProductDAO;
 import com.niit.shoppingbackendDAO.ProductDAOImpl;
 import com.niit.shoppingbackendDAO.SupplierDAO;
 import com.niit.shoppingbackendDAO.SupplierDAOImpl;
-import com.niit.shoppingbackendDAO.UserDAO;
-import com.niit.shoppingbackendDAO.UserDAOImpl;
+
 import com.niit.shoppingbackendmodel.Category;
+import com.niit.shoppingbackendmodel.Login;
 import com.niit.shoppingbackendmodel.Product;
+import com.niit.shoppingbackendmodel.Register;
 import com.niit.shoppingbackendmodel.Supplier;
-import com.niit.shoppingbackendmodel.User;
-import com.niit.shoppingbackendmodel.UserDetails;
+
 
 @Configuration
 @ComponentScan("com.niit.shoppingbackend")
@@ -65,9 +65,9 @@ public class ApplicationContextConfig {
 		sessionFactoryBuilder.addAnnotatedClass(Category.class);
 		sessionFactoryBuilder.addAnnotatedClass(Supplier.class);
 		sessionFactoryBuilder.addAnnotatedClass(Product.class);
-		sessionFactoryBuilder.addAnnotatedClass(User.class);
+		sessionFactoryBuilder.addAnnotatedClass(Login.class);
 
-		sessionFactoryBuilder.addAnnotatedClass(UserDetails.class);
+		sessionFactoryBuilder.addAnnotatedClass(Register.class);
 		
 		return sessionFactoryBuilder.buildSessionFactory();
 	}
@@ -95,11 +95,5 @@ public class ApplicationContextConfig {
 		public ProductDAO getProductDAO(SessionFactory sessionFactory)
 		{
 			return new ProductDAOImpl(sessionFactory);
-		}
-		@Autowired
-		@Bean(name="userDAO")
-		public UserDAO getUserDAO(SessionFactory sessionFactory)
-		{
-			return new UserDAOImpl(sessionFactory);
 		}
 }
